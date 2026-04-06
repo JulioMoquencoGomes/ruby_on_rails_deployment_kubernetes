@@ -5,9 +5,11 @@
 \
  docker build -t testerails:v1
 \
+\
 **Carregue a imagem no minikube:**
 \
  minikube image load testerails:v1
+\
 \
 **Salve a imagem em tar, caso queira carrega-la depois pelo arquivo(opcional):**
 \
@@ -23,9 +25,11 @@
 \
  kubectl create deployment testerails --image testerails:v1
 \
+\
 **Patch do deployment:**
 \
 kubectl patch deployment testerails -p '{"spec":{"template":{"spec":{"containers":[{"name":"testerails", "imagePullPolicy":"Never"}]}}}}'
+\
 \
 **Para acessar sua aplicação pelo navegador:**
 \
@@ -33,7 +37,7 @@ kubectl patch deployment testerails -p '{"spec":{"template":{"spec":{"containers
 \
  minikube service testerails
 \
-\ Por fim esse será um resultado semelhante a esse, com IP e porta diferente:
+Por fim esse será um resultado semelhante a esse, com IP e porta diferente:
 \
 \
 ![Resposta do terminal](Images/terminal.png)
